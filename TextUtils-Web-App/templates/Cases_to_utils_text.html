@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text Utils</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    style="background-color: rgb(0, 0, 0)"
+    class="fs-5"
+    data-bs-theme="dark"
+  >
+    <nav class="navbar navbar-expand-lg bg-success" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TextUtils.com</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-5">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link active" href="#">About Us</a>
+            </li>
+
+            <li class="nav-item ms-5">
+              <a class="nav-link active" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Display block for text without punctuation -->
+    <div class="container fs-1 mt-5">
+      {% if condition1 == "on" %}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose1 }}</h1>
+      <p class="mt-3">
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p class="mt-3">
+        <span class="fw-medium">Text Without Punctuation:</span><br />
+        <span class="fw-light" style="white-space: pre-wrap"> --> {{ analyzed_text1 }}</span>
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Display block for text converted to Upper Case -->
+    <div class="container fs-1 mt-5">
+      {% if condition2 == "on"%}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose2 }}</h1>
+      <p>
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p>
+        <span class="fw-medium">Text in UPPER CASE:</span><br />
+        <span class="fw-light" style="white-space: pre-wrap">--> {{ analyzed_text2 }}</span>
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Display block for text converted to Lower Case -->
+    <div class="container fs-1 mt-5">
+      {% if condition4 == "on"%}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose4 }}</h1>
+      <p>
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p>
+        <span class="fw-medium">Text in Lower Case:</span><br />
+        <span class="fw-light" style="white-space: pre-wrap">--> {{ analyzed_text4 }}</span>
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Display block for text converted to Title Case -->
+    <div class="container fs-1 mt-5">
+      {% if condition5 == "on"%}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose5 }}</h1>
+      <p>
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p>
+        <span class="fw-medium">Text in Title:</span><br />
+        <span class="fw-light" style="white-space: pre-wrap">--> {{ analyzed_text5 }}</span>
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Display block for Capitalized text -->
+    <div class="container fs-1 mt-5">
+      {% if condition6 == "on"%}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose6 }}</h1>
+      <p>
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p>
+        <span class="fw-medium">Capitalized Text:</span><br />
+        <span class="fw-light" style="white-space: pre-wrap">--> {{ analyzed_text6 }}</span>
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Display block for checking if all characters are digits -->
+    <div class="container fs-1 mt-5">
+      {% if condition3 == "on" %}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose3 }}</h1>
+      <p>
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p>
+        <span class="fw-medium">Result:</span>
+        {% if analyzed_text3 == True %}
+        <span class="fw-light">Your text contains only numbers.</span>
+        {% else %}
+        <span class="fw-light">Your text contains non-numeric characters.</span>
+        {% endif %}
+      </p>
+      {% endif %}
+    </div>
+
+    <!-- Display block for checking if all characters are alphabets -->
+    <div class="container fs-1 mt-5">
+      {% if condition7 == "on"%}
+      <h1 class="mt-3 fw-bolder">Text Analysis: {{ purpose7 }}</h1>
+      <p>
+        <span class="fw-medium">Original Text:</span> <br />
+        <span class="fw-light" style="white-space: pre-wrap"
+          >--> {{ prev_text }}</span
+        >
+      </p>
+      <p>
+        <span class="fw-medium">Result:</span>
+        {% if analyzed_text7 == True %}
+        <span class="fw-light">Your text contains only alphabets.</span>
+        {% else %}
+        <span class="fw-light"
+          >Your text contains non-alphabetic characters.</span
+        >
+        {% endif %}
+      </p>
+      {% endif %}
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
